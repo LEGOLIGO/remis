@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Remis</title>
+<style>
+	.titel {
+		font-size: 45px;
+		text-align: center;
+	}
+	body {
+		background-color: yellow;
+		color: white;
+		font-family: Arial, Sans-Serif;
+		margin: 0;
+		overflow: hidden;
+	}
+	.content::-webkit-scrollbar {
+		display: none;
+	}
+	.neu {
+		background-color: yellow;
+		border: 1px solid black;
+		border-radius: 50%;
+		padding: 4px 12px;
+		font-size: 2em;
+		cursor: pointer;
+	}
+	neu:before {
+		content: "<br>";
+	}
+	.a {
+		color: white;
+		text-decoration: none;
+	}
+	.rer {
+		background-color: white;
+		color: black;
+	}
+	.meld {
+		text-align: right;
+		position: fixed;
+		width: 50%;
+		left: 50%;
+	}
+	.link:hover, .red-link:hover {
+		text-decoration: underline;
+		color: yellow;
+	}
+	.meld input[type="button"], .mehr {
+		border: 1px solid black;
+		background-color: yellow;
+		color: black;
+		border-radius: 4px;
+		padding: 3pt 6pt;
+		cursor: pointer;
+	}
+	.meld input[type="button"]:hover, .mehr:hover, .neu:hover {	
+		background-color: red;
+		color: white;
+	}
+	.progress-container {
+		width: 100%;
+		height: 8px;
+		background: #ccc;
+	}
+	.under {
+		text-decoration: underline;
+	}
+	input[type="text"], textarea {
+		font-size: 1em;
+	}
+	.progress-bar {
+		height: 8px;
+		background: blue;
+		width: 0%;
+	}
+	.header {
+		position: fixed;
+		top: 0;
+		z-index: 1;
+		width: 100%;
+		background-color: yellow;
+		color: red;
+	}
+	.none {
+		display: none;
+	}
+	.block {
+		display: block;
+	}
+	.content {
+		padding-top: 100px;
+		border-bottom: 1px solid red;
+		background-color: #66ccff;
+		height: 365pt;
+		margin: 50px 0 0 0;
+		overflow-x: hidden;
+		width: 100%;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+	#anmeldealert, #links {
+		display: none;
+		color: black;
+		background-color: rgb(255, 255, 255);
+		left: 3%;
+		top: 20%;
+		height: 75%;
+		width: 80%;
+		border: 3px solid black;
+	}
+	#bod {
+		background-color: rgba(0,0,0,0.4);
+		position: fixed;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		display: none;
+	}
+	#content {display: none;}
+	.link {
+		color: white;
+		/*text-decoration: none;*/
+	}
+	.red-link {
+		color: red;
+	}
+	.neuesNeu {
+		resize: none;
+		overflow: auto;
+		background-color: #66ccff;
+		color: white;
+		font-family: Arial, sans-serif;
+		border: 2px solid white;
+		width: 100%;
+	}
+</style>
+</head>
+<body onload="setTimeout(typeWriter, 490)">
+	<div id="bod"></div><div id="links" style="position: fixed;"><ul id="liste"></ul></div><div id="anmeldealert"><h2 class="titel under">Anmelden</h2><form action="javascript:anmeldung()">Benutzername: 
+<input type="text" for="username" id="name" required><br/>Passwort: <input type="password" id="benpassw" required><br><br><input type="submit" value="Anmelden"></form></div><div class="header">
+<h2 class="titel">R</h2>
+<div class="progress-container">
+<div class="progress-bar" id="myBar"></div>
+</div>
+</div></div><div class="content"><div class="meld"><span id="user"></span><br/><input type="button" id="button" value="Anmelden"></div><div id="home"><div id="text"><a href="file:///C:/Users/Eli/Dokumente/edschi.html?nochnicht=true" class="link">Edschi, die neue Suchmaschine</a> ist da! <button class="mehr" id="edsi">Mehr erfahren»</button></div></div><div id="edschiNeu" class="none"><div><h2 class="titel under"><a href="file:///C:/Users/Eli/Dokumente/edschi.html?nochnicht=true" class="link">Edschi, die neue Suchmaschine</a> ist da!</h2><a href="file:///C:/Users/Eli/Dokumente/Edschi_2.html" class="link">Edschi</a> ist eine neue Programmier-Firma, die die <a href="file:///C:/Users/Eli/Dokumente/edschi.html?nochnicht=true" class="link obig">Suchmaschine Edschi</a> programmiert hat.<br/>Edschi kann jeden Begriff suchen, aber bei Quatsch kommt nur „Error“ raus.<br/>Der Name Edschi kommt eigentlich nur daher, dass er schön ist, hört sich aber ähnlich wie Ätschi (Bätschi) an.<br/>Wer Edschi mag, kann jeden Mittwoch von 14:00 Uhr bis 16:00 Uhr zum Edschi-Zentrum kommen und programmieren helfen oder lernen.<br/>Jeder, der älter als 10 Jahre ist kann sich sogar schon bewerben!</div>---------</div><div id="andereThemen"><div id="themen"></div><a href="file:///C:/Users/Eli/Desktop/Coding/home_eli.html" class="link">Gehen Sie zu Eli®</a><br/><a href="file:///C:/Users/Eli/Desktop/Coding/Remis-Suche.html" class="red-link">Remis-Suche</a><br/><button class="neu" title="Thema hinzufügen" onclick="document.getElementById('neu').style.display='block';">+</button><div id="neu" style="display: none;"><h1><u>Neues Thema</u></h1>Links: \link ende="https://..." wert="Text"\<input type="text" class="neuesNeu" id="titleFeld"><br/><textarea id="neue" rows="10" class="neuesNeu"></textarea><br/><button class="mehr" onclick="sendThema()">Abschicken</button></div></div></div></div><noscript><span>Diese Seite funktioniert bei ihnen nicht. Gehen Sie zurück zu <a href="home_eli.html">Eli®</a>.</span></noscript>
+<script src="remis.js">
+</script>
+</body>
+</html>
